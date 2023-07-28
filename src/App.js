@@ -1,14 +1,13 @@
 import './App.css';
-// import WbTwilightIcon from '@mui/icons-material/WbTwilight';
-// import Icon from '@mui/material/Icon';
-// import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import WbTwilightIcon from '@mui/icons-material/WbTwilight';
+
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import React, {useState} from 'react'
 import axios from 'axios';
 
+
 function App() {
    
-//   const api= axios.create ({ baseURL: `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c223886163a50e444ac7bf6a348c9663/`
-// })
 const [data, setData] = useState({});
 const [location, setLocation]=useState(' ');
 
@@ -47,7 +46,7 @@ const searchbar= (event)=>{
           </div>
           <div className="description-2" style={{textTransform:"capitalize"}}>
             {data.weather ? <h3>{data.weather[0].description}</h3>:null }
-        
+
           </div>
           <div className="description">
             {data.weather? <h3>{data.weather[0].main}</h3> : null}
@@ -55,19 +54,20 @@ const searchbar= (event)=>{
         </div>
         <div className="bottom">
         <div className="wind">
-            {/* <WbSunnyIcon fontSize="large"/> */}
+       
+            <WbSunnyIcon fontSize="large"/>
             <p>Sunrise</p>
 
             {data.sys? <p>{new Date(data.sys.sunrise * 1000).toLocaleString('default')}</p>: null }
             </div>
           <div className="feels">
-          {/* <WbTwilightIcon fontSize="large"  /> */}
+          <WbTwilightIcon fontSize="large"  />
           <p>Sunset</p>
 
           {data.sys? <p>{new Date(data.sys.sunset * 1000).toLocaleString('default')}</p>: null }
           </div> 
         </div>
-        <div className="bottom">
+        <div className="bottom-2">
           <div className="feels">
          {data.main? <p className='bold'>{data.main.feels_like} °F </p> : null}
           <p>Feels Like</p>
