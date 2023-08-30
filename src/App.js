@@ -9,7 +9,7 @@ import axios from 'axios';
 function App() {
    
 const [data, setData] = useState({});
-const [location, setLocation]=useState(' ');
+const [location, setLocation]=useState('');
 
 
 const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=c223886163a50e444ac7bf6a348c9663`;
